@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% import 'bootstrap/wtf.html' as wtf%} {% block styles%} {{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}"> {% endblock%} {% block content%}
+<div class="container">
+    <div class="row">
+        <div class="col-xs-4">
+            {{wtf.quick_form(form)}}
+        </div>
+        <div class="col-xs-4">
+            <p>Update Profile Photo</p>
+            <form action="{{url_for('main.update_pic',user_id = current_user.id)}}" method="post" enctype="multipart/form-data">
+                <input type="file" name="profile-pic" class="form-control" required>
+                <div class="btn-container m-4">
+                    <input type="submit" value="Upload Photo" class="btn bio-btn">
+                </div>
+            </form>
+        </div>
+    </div>
+    {% endblock %}

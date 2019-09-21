@@ -1,0 +1,7 @@
+Hey {{name}}
+Welcome to Blogger.
+This is a platform made for you to share your views.
+Hope you enjoy your experience with us.
+
+Cheers,
+Blogger Team

@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% import "bootstrap/wtf.html" as wtf %} {% block styles%} {{super()}}
+<link rel="stylesheet" href="../static/css/index.css"> {% endblock %} {% block content%}
+<div class="container">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="jumbotron">
+    {{wtf.quick_form(form)}}
+</div>
+</div>
+</div>
+</div>
+
+<style>
+.jumbotron{
+    background-color: #4F772D;
+    color: white;
+}
+</style>
+
+{% endblock%}

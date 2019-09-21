@@ -1,0 +1,22 @@
+{% macro displayComments(my_comments) %} 
+{% for comment in my_comments %}
+<hr>
+<div class="comment">
+    <p>
+        {% if comment.user.image %}
+            <img src="{{url_for('static',filename = comment.user.image)}}" alt="" class="img-thumbnails">
+        {% else %}
+            <img src="{{url_for('static',filename = 'photos/avatar.png')}}" alt="" class="img-thumbnails">
+        {% endif %}
+        <a href="/user/{{comment.user.username}}&{{comment.user.id}}"><strong>{{comment.user.username|capitalize}}</strong></a>
+    </p>
+    <p>{{comment.content}}</p>
+</div>
+{% endfor %}
+<style>
+    .img-thumbnails{
+    width: 30px;
+    height: 30px;
+     }
+    </style>
+{% endmacro %}
